@@ -8,6 +8,9 @@ img.portrait {
 h1 {
     margin-bottom: 50px;
     text-align: center;
+    font-family: UnifrakturMaguntia;
+    color: grey;
+
 }
 
 .about {
