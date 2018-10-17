@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block site_content %}
+  {% block styles %}
+    {{ super() }}
+    <!-- Custom styles for this template -->
+    <link href="static/custom_research_responsive.css" rel="stylesheet">
+  {% endblock %}
+  <body>
+  <h1>{{ title }}</h1>
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-6 justify-content-center">
+              {{ blurb }}
+          </div>
+      </div>
+      {% for paper in papers %}
+          <div class="row">
+              <a class="paperTitle col-xs-6" href="{{ paper.content_path }}"> <h5>{{ paper.title }}</h5> </a>
+          </div>
+          {% if paper.coauthors %}
+          <div class="row">
+              <p class="coauthors">with {{ paper.coauthors }}</p>
+          </div>
+          {% else %}
+          <p></p>
+          {% endif %}
+          <div class="row">
+              <h6>Abstract</h6>
+                <div>{{ paper.abstract }}</div>
+          </div>
+      {% endfor %}
+    </div>
+  </body>
+{% endblock %}

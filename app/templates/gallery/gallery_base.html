@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block site_content %}
+  {% block styles %}
+    {{ super() }}
+    <!-- Custom styles for this template -->
+    <link href="../static/custom_gallery_responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/custom_base_responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=UnifrakturMaguntia" />
+
+  {% endblock %}
+  <body>
+    <h1>{{ title }}</h1>
+
+    <!-- Default gallery display/ Bootstrap grid system -->
+        <div class="container">
+            {% for photo in photos %}
+          <div class="row justify-content-center">
+            <img class="col-xs-6 baseImage" src="{{ photo.content_path }}"
+                 data-toggle="modal" data-target="#{{ photo.id }}">
+          </div>
+          <div class="row justify-content-center">
+            <div class="caption">{{ photo.title }}</div>
+          </div>​
+            {% endfor %}
+        </div>
+
+  <!-- Corresponding modal images for each picture displayed -->
+    {% for photo in photos %}
+     <div class="modal fade" id="{{ photo.id }}" tabindex="-1" role="dialog"
+          aria-labelledby="enlargeImageModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                {% for modal_image_path in photo.modal_images() %}
+                <img src="{{ modal_image_path }}" class="enlargeImageModalSource" style="width: 100%;">
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+
+  </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}
