@@ -42,29 +42,29 @@ def build_records(database=None, config_class=Config):
     with app_context(config_class):
         database = database or db
 
-        # kgPhoto = create_model_item('Photograph', content_path='../static/kelvinbridgePhotograph.JPG',
-        #                             title='Kelvinbridge', subject='Glasgow')
-        # kgPainting = create_model_item('Painting', content_path='../static/kelvinBridgePainting.png',
-        #                                title='Kelvinbridge', subject='Glasgow', photograph=kgPhoto)
-        #
-        # wPhoto = create_model_item('Photograph', content_path='../static/westPrincesStreetPhotograph.JPG',
-        #                            title='West Princes Street', subject='Glasgow')
-        # wPainting = create_model_item('Painting', content_path='../static/westPrincesStreetPainting.png',
-        #                               title='West Princes Street', subject='Glasgow', photograph=wPhoto)
+        kgPhoto = create_model_item('Photograph', content_path='../static/kelvinbridgePhotograph.JPG',
+                                    title='Kelvinbridge', subject='Glasgow')
+        kgPainting = create_model_item('Painting', content_path='../static/kelvinBridgePainting.png',
+                                       title='Kelvinbridge', subject='Glasgow', photograph=kgPhoto)
 
-        # maryhill = create_model_item('Photograph', content_path='../static/maryhill.jpg',
-        #                               title='Maryhill', subject='Glasgow')
-        # queenStreet = create_model_item('Photograph', content_path='../static/queenStreet.jpg',
-        #                                 title='Queen Street Station', subject='Glasgow')
-        # chippy = create_model_item('Photograph', content_path='../static/chippy.jpg',
-        #                             title='Chippy, Alexandra Parade', subject='Glasgow')
-        # kelvin = create_model_item('Photograph', content_path='../static/theKelvin.jpg',
-        #                             title='The Kelvin', subject='Glasgow')
-        #
-        # doublet = create_model_item('Photograph', content_path='../static/theDoublet.jpg',
-        #                             title='The Doublet, Woodlands', subject='Pub')
-        # louden = create_model_item('Photograph', content_path='../static/theLoudenTavern.jpg',
-        #                             title='The Louden Tavern, Duke Street', subject='Pub')
+        wPhoto = create_model_item('Photograph', content_path='../static/westPrincesStreetPhotograph.JPG',
+                                   title='West Princes Street', subject='Glasgow')
+        wPainting = create_model_item('Painting', content_path='../static/westPrincesStreetPainting.png',
+                                      title='West Princes Street', subject='Glasgow', photograph=wPhoto)
+
+        maryhill = create_model_item('Photograph', content_path='../static/maryhill.jpg',
+                                      title='Maryhill', subject='Glasgow')
+        queenStreet = create_model_item('Photograph', content_path='../static/queenStreet.jpg',
+                                        title='Queen Street Station', subject='Glasgow')
+        chippy = create_model_item('Photograph', content_path='../static/chippy.jpg',
+                                    title='Chippy, Alexandra Parade', subject='Glasgow')
+        kelvin = create_model_item('Photograph', content_path='../static/theKelvin.jpg',
+                                    title='The Kelvin', subject='Glasgow')
+
+        doublet = create_model_item('Photograph', content_path='../static/theDoublet.jpg',
+                                    title='The Doublet, Woodlands', subject='Pub')
+        louden = create_model_item('Photograph', content_path='../static/theLoudenTavern.jpg',
+                                    title='The Louden Tavern, Duke Street', subject='Pub')
 
         quantum = create_model_item('Paper',
                                     content_path='https://www.sciencedirect.com/science/article/pii/S0021869316000673',
