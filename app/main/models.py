@@ -10,16 +10,16 @@ class MediaMixin(object):
 class Paper(MediaMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    content_path = db.Column(db.String(64), index=True)
+    content_path = db.Column(db.TEXT(), index=True)
     title = db.Column(db.String(64), index=True)
-    abstract = db.Column(db.String(64), index=True)
+    abstract = db.Column(db.TEXT(), index=True)
     coauthors = db.Column(db.String(64), index=True)
 
 
 class Project(MediaMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    content_path = db.Column(db.String(64), index=True)
+    content_path = db.Column(db.TEXT(), index=True)
     title = db.Column(db.String(64), index=True)
     abstract = db.Column(db.TEXT(), index=True)
     coauthors = db.Column(db.String(64), index=True)
