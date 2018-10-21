@@ -52,19 +52,19 @@ def build_records(database=None, config_class=Config):
         # wPainting = create_model_item('Painting', content_path='../static/westPrincesStreetPainting.png',
         #                               title='West Princes Street', subject='Glasgow', photograph=wPhoto)
 
-        maryhill = create_model_item('Photograph', content_path='../static/maryhill.jpg',
-                                      title='Maryhill', subject='Glasgow')
-        queenStreet = create_model_item('Photograph', content_path='../static/queenStreet.jpg',
-                                        title='Queen Street Station', subject='Glasgow')
-        chippy = create_model_item('Photograph', content_path='../static/chippy.jpg',
-                                    title='Chippy, Alexandra Parade', subject='Glasgow')
-        kelvin = create_model_item('Photograph', content_path='../static/theKelvin.jpg',
-                                    title='The Kelvin', subject='Glasgow')
-
-        doublet = create_model_item('Photograph', content_path='../static/theDoublet.jpg',
-                                    title='The Doublet, Woodlands', subject='Pub')
-        louden = create_model_item('Photograph', content_path='../static/theLoudenTavern.jpg',
-                                    title='The Louden Tavern, Duke Street', subject='Pub')
+        # maryhill = create_model_item('Photograph', content_path='../static/maryhill.jpg',
+        #                               title='Maryhill', subject='Glasgow')
+        # queenStreet = create_model_item('Photograph', content_path='../static/queenStreet.jpg',
+        #                                 title='Queen Street Station', subject='Glasgow')
+        # chippy = create_model_item('Photograph', content_path='../static/chippy.jpg',
+        #                             title='Chippy, Alexandra Parade', subject='Glasgow')
+        # kelvin = create_model_item('Photograph', content_path='../static/theKelvin.jpg',
+        #                             title='The Kelvin', subject='Glasgow')
+        #
+        # doublet = create_model_item('Photograph', content_path='../static/theDoublet.jpg',
+        #                             title='The Doublet, Woodlands', subject='Pub')
+        # louden = create_model_item('Photograph', content_path='../static/theLoudenTavern.jpg',
+        #                             title='The Louden Tavern, Duke Street', subject='Pub')
 
         quantum = create_model_item('Paper',
                                     content_path='https://www.sciencedirect.com/science/article/pii/S0021869316000673',
@@ -127,5 +127,5 @@ def build_records(database=None, config_class=Config):
                                       if mH is finite. We also consider the case where chark=p>0, generalising 
                                       the results of [7] to the infinite-dimensional setting.""")
 
-        for i in [maryhill, queenStreet, chippy, kelvin, doublet, louden, quantum, finite, graded, antipode]:
+        for i in [quantum, finite, graded, antipode]:
             commit_item(i)
