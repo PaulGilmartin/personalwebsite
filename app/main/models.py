@@ -10,25 +10,25 @@ class MediaMixin(object):
 class Paper(MediaMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    content_path = db.Column(db.String(1048576), index=True)
+    content_path = db.Column(db.String(1048576))
     title = db.Column(db.String(64), index=True)
-    abstract = db.Column(db.String(1048576), index=True)
+    abstract = db.Column(db.String(1048576))
     coauthors = db.Column(db.String(64), index=True)
 
 
 class Project(MediaMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    content_path = db.Column(db.TEXT(), index=True)
+    content_path = db.Column(db.String(1048576))
     title = db.Column(db.String(64), index=True)
-    abstract = db.Column(db.String(1048576), index=True)
+    abstract = db.Column(db.String(1048576))
     coauthors = db.Column(db.String(64), index=True)
 
 
 class Photograph(MediaMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    content_path = db.Column(db.String(64), index=True)
+    content_path = db.Column(db.String(64))
     title = db.Column(db.String(64), index=True)
     subject = db.Column(db.String(64), index=True)  # e.g. 'Pub' or 'Glasgow'
     painting = db.relationship('Painting', backref='photograph', lazy='dynamic')
@@ -43,7 +43,7 @@ class Photograph(MediaMixin, db.Model):
 class Painting(MediaMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    content_path = db.Column(db.String(64), index=True)
+    content_path = db.Column(db.String(64))
     title = db.Column(db.String(64), index=True)
     subject = db.Column(db.String(64), index=True)
     photo_id = db.Column(db.Integer, db.ForeignKey('photograph.id'))
