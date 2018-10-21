@@ -12,8 +12,8 @@ class Paper(MediaMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content_path = db.Column(db.String(1048576))
     title = db.Column(db.String(64), index=True)
-    abstract = db.Column(db.String(1048576))
-    coauthors = db.Column(db.String(64), index=True)
+    abstract = db.Column(db.Text)
+    coauthors = db.Column(db.Text, index=True)
 
 
 class Project(MediaMixin, db.Model):
@@ -21,8 +21,8 @@ class Project(MediaMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content_path = db.Column(db.String(1048576))
     title = db.Column(db.String(64), index=True)
-    abstract = db.Column(db.String(1048576))
-    coauthors = db.Column(db.String(64), index=True)
+    abstract = db.Column(db.Text)
+    coauthors = db.Column(db.Text, index=True)
 
 
 class Photograph(MediaMixin, db.Model):
