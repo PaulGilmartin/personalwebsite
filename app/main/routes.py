@@ -48,7 +48,7 @@ def projects():
 @main_bp.route('/gallery')
 def gallery_front():
     links = [Link('main.glasgow', display='Glasgow'), Link(link='main.pubs', display='Pubs'),
-             Link(link='main.paintings', display='Paintings'), Link(link='main.paintings', display='Misc.')]
+             Link(link='main.paintings', display='Paintings')]
     return render_template('/gallery/gallery_front.html', links=links,
                            central_image="../static/maryhill.jpg")
 
