@@ -1,5 +1,6 @@
 from app.main import bp as main_bp
 from app.main.models import Painting, Paper, Photograph, Project
+from app.static.publications_config import publications_title_to_data
 from flask import render_template, url_for
 
 from collections import namedtuple
@@ -34,7 +35,12 @@ def publications():
     blurb = """My research interests lie primarily in the field of non-commutative algebra. I'm particularly interested in
              Hopf algebras of finite GK-dimension, quantum groups, quantum homogeneous spaces
              and Poisson algebraic groups. My published research papers in this field are listed below."""
-    return render_template('/publications.html', blurb=blurb, papers=papers, title='Publications')
+
+    # TODO: in the below we pass a paper_config variable in to avoid having to include long text data
+    # since I can't currently find a way to upload a record with such properties to mysql in the prod db
+    # To find a way to fix this and eliminate need for hard-coded publication data in the static file
+    return render_template('/publications.html', blurb=blurb, papers=papers,
+                           paper_config=publications_title_to_data, title='Publications')
 
 
 @main_bp.route('/projects')

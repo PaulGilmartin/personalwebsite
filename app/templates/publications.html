@@ -18,18 +18,18 @@
       </div>
       {% for paper in papers %}
           <div class="row">
-              <a class="paperTitle col-xs-6" href="{{ paper.content_path }}"> <h5>{{ paper.title }}</h5> </a>
+              <a class="paperTitle col-xs-6" href="{{ paper_config[paper.title].content_path }}"> <h5>{{ paper.title }}</h5> </a>
           </div>
           {% if paper.coauthors %}
           <div class="row">
-              <p class="coauthors">with {{ paper.coauthors }}</p>
+              <p class="coauthors">with {{ paper_config[paper.title].coauthors }}</p>
           </div>
           {% else %}
           <p></p>
           {% endif %}
           <div class="row">
               <h6>Abstract</h6>
-                <div>{{ paper.abstract }}</div>
+                <div>{{ paper_config[paper.title].abstract }}</div>
           </div>
       {% endfor %}
     </div>
