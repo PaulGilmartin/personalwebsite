@@ -2,6 +2,8 @@ h1 {
     text-align: center;
     margin-top: 1%;
     margin-bottom: 3%;
+    font-family: UnifrakturMaguntia;
+    color: grey;
 }
 
 a.paperTitle {
