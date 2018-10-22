@@ -128,5 +128,9 @@ def build_records(database=None, config_class=Config):
         #                               the results of [7] to the infinite-dimensional setting.""")
 
         q = create_model_item('Paper', title='Quantum homogeneous spaces of connected Hopf algebras')
-        for i in [q]:
+        connected = create_model_item('Paper', title='Connected (graded) Hopf algebras')
+        finite = create_model_item('Paper', title='Hopf algebras under finiteness conditions')
+        antipode = create_model_item('Paper', title='A note on the order of the antipode of a pointed Hopf algebra')
+
+        for i in [connected, finite, antipode]:
             commit_item(i)
