@@ -126,11 +126,13 @@ def build_records(database=None, config_class=Config):
         #                              coradically graded, it is shown that the order of S is finite if and only
         #                               if mH is finite. We also consider the case where chark=p>0, generalising
         #                               the results of [7] to the infinite-dimensional setting.""")
+        #
+        # q = create_model_item('Paper', title='Quantum homogeneous spaces of connected Hopf algebras')
+        # connected = create_model_item('Paper', title='Connected (graded) Hopf algebras')
+        # finite = create_model_item('Paper', title='Hopf algebras under finiteness conditions')
+        # antipode = create_model_item('Paper', title='A note on the order of the antipode of a pointed Hopf algebra')
+        #
+        web = create_model_item('Project', title='Personal website')
 
-        q = create_model_item('Paper', title='Quantum homogeneous spaces of connected Hopf algebras')
-        connected = create_model_item('Paper', title='Connected (graded) Hopf algebras')
-        finite = create_model_item('Paper', title='Hopf algebras under finiteness conditions')
-        antipode = create_model_item('Paper', title='A note on the order of the antipode of a pointed Hopf algebra')
-
-        for i in [connected, finite, antipode]:
+        for i in [web]:
             commit_item(i)

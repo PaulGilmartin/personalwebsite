@@ -1,6 +1,8 @@
 from app.main import bp as main_bp
 from app.main.models import Painting, Paper, Photograph, Project
 from app.static.publications_config import publications_title_to_data
+from app.static.projects_config import project_title_to_data
+
 from flask import render_template, url_for
 
 from collections import namedtuple
@@ -48,7 +50,8 @@ def projects():
     projs = Project.query.all()
     blurb = """This page details some of the programming projects I've worked on in my spare time. More to come
     in the not too distant future."""
-    return render_template('/projects.html', papers=projs, blurb=blurb, title='Projects')
+    return render_template('/projects.html', paper_config=project_title_to_data,
+                            papers=projs, blurb=blurb, title='Projects')
 
 
 @main_bp.route('/gallery')
