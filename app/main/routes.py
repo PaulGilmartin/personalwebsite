@@ -20,9 +20,9 @@ def home():
 
 @main_bp.route('/about')
 def about():
-    local_links = [Link(link='main.about', display='C.V.'),
-                   Link(link='main.projects', display='Projects')]
-    web_links = [Link(link='https://www.linkedin.com/in/paul-gilmartin/', display='LinkedIn')]
+    local_links = [Link(link='main.projects', display='Projects')]
+    web_links = [Link(link='https://www.linkedin.com/in/paul-gilmartin/', display='LinkedIn'),
+                 Link(link='static/Professional_CV.pdf', display='C.V.'),]
     return render_template('about.html', local_links=local_links, web_links=web_links)
 
 
